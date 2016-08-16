@@ -13,7 +13,7 @@ var server = http.createServer(function(req, res) {
 
   var body = [];
   req.on('error', function(err) {
-    console.error(err);
+    syslog.log(syslog.LOG_ERROR, "request error " + err);
   }).on('data', function(chunk) {
     body.push(chunk);
   }).on('end', function() {
