@@ -3,9 +3,9 @@
 Description=Simple mail notifier
 
 [Service]
-Type=forking
+Type=simple
 User=root
-ExecStart=/usr/bin/nodejs /home/gpolart/simple_notifier/notifier.js
+ExecStart=/usr/bin/nodejs /home/gpolart/simple-notifier/notifier.js
 Restart=always
 
 [Install]
