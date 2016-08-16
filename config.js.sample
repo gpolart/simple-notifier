@@ -1,0 +1,18 @@
+var config = {};
+
+config.port = 8025;
+
+config.smtp = {
+    host: "smtp.domain.tld",
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'IDENT',
+        pass: 'PASSWORD'
+    }
+};
+
+config.from = "my_mail@domain.tld";
+config.to = "another_mail@another_domain.tld";
+
+module.exports = config;

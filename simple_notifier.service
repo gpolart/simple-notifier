@@ -1,0 +1,12 @@
+
+[Unit]
+Description=Simple mail notifier
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/nodejs /home/gpolart/simple_notifier/notifier.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
