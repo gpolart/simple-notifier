@@ -26,7 +26,6 @@ var server = http.createServer(function(req, res) {
                 };
 
     var data = qstring.parse(body);
-    console.log(" data = ", data);
     if (data.hasOwnProperty('subject')) {
         options.subject = data.subject;
     }
@@ -41,10 +40,11 @@ var server = http.createServer(function(req, res) {
           res.end('KO');
       }
       else {
+          console.log(" info = ", info);
+          syslog.log(syslog.LOG_INFO, "notifier send mail " + info.response);
+          res.writeHead(200);
+          res.end('OK');
       }
-      syslog.log(syslog.LOG_INFO, "notifier send mail " + info);
-      res.writeHead(200);
-      res.end('OK');
     });
 
   });
