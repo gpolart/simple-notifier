@@ -1,4 +1,4 @@
-// See LICENCE file
+// See GPL LICENCE file
 //
 var http = require('http');
 var nodemailer = require('nodemailer');
@@ -40,7 +40,6 @@ var server = http.createServer(function(req, res) {
           res.end('KO');
       }
       else {
-          console.log(" info = ", info);
           syslog.log(syslog.LOG_INFO, "notifier send mail " + info.response);
           res.writeHead(200);
           res.end('OK');
